@@ -1,0 +1,6 @@
+framework module Pods_EagleTests {
+  umbrella header "Pods-EagleTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

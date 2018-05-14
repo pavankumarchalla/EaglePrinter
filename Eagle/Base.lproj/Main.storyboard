@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Qqu-Fs-0WI">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Printers-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="PrintersViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="PrintersViewController" customModule="Eagle" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oops...! No Printers Found In the connected LAN" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBU-lN-HI8">
+                                <rect key="frame" x="8" y="303" width="359" height="62.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="48" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="H2j-H1-Mic">
+                                <rect key="frame" x="0.0" y="72" width="375" height="587"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="PrinterListTableViewCell" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="printerCell" rowHeight="48" id="m6r-kr-BOP">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="48"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m6r-kr-BOP" id="94J-y9-3CG">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="47.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="DoM-za-Uqe"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="9sb-kp-kAu"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="H2j-H1-Mic" secondAttribute="bottom" constant="8" id="7Bx-7i-Nmi"/>
+                            <constraint firstItem="fBU-lN-HI8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="7Ge-gQ-2jQ"/>
+                            <constraint firstItem="H2j-H1-Mic" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Lxn-Pu-MIb"/>
+                            <constraint firstAttribute="trailing" secondItem="H2j-H1-Mic" secondAttribute="trailing" id="XWm-gN-xgN"/>
+                            <constraint firstAttribute="trailing" secondItem="fBU-lN-HI8" secondAttribute="trailing" constant="8" id="kAp-tR-VBf"/>
+                            <constraint firstItem="fBU-lN-HI8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="qVG-QX-rnH"/>
+                            <constraint firstItem="H2j-H1-Mic" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="waC-ge-xBf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Printers" id="Dm7-yi-dkd">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="rAb-L2-b6D">
+                            <connections>
+                                <action selector="refreshButtonTapped:" destination="BYZ-38-t0r" id="3ak-yf-Hsg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="noPrintersDisplayLabel" destination="fBU-lN-HI8" id="7e3-DK-S75"/>
+                        <outlet property="printersListTableView" destination="H2j-H1-Mic" id="g0j-2B-n6f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="896.79999999999995" y="-560.86956521739137"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="i1C-r0-rg4">
+            <objects>
+                <viewController storyboardIdentifier="PDFViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Bi5-5v-ymK" customClass="PDFViewController" customModule="Eagle" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sXf-ef-Us6"/>
+                        <viewControllerLayoutGuide type="bottom" id="bQe-mE-x7W"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="41N-nH-LHf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Kv-TK-8LZ">
+                                <rect key="frame" x="8" y="124" width="359" height="535"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JUm-L8-yCM">
+                                <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                                <items>
+                                    <navigationItem title="Cash Reciept" id="GxZ-bY-mFW">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="9mS-zh-pqv">
+                                            <connections>
+                                                <action selector="cancelTapped:" destination="Bi5-5v-ymK" id="vZG-Wq-Bno"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Print" id="3dy-yN-aBV">
+                                            <connections>
+                                                <action selector="printTapped:" destination="Bi5-5v-ymK" id="ORj-6B-EfB"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7Kv-TK-8LZ" firstAttribute="leading" secondItem="41N-nH-LHf" secondAttribute="leading" constant="8" id="1Lr-UH-Fa6"/>
+                            <constraint firstAttribute="trailing" secondItem="JUm-L8-yCM" secondAttribute="trailing" id="Kht-4s-J1L"/>
+                            <constraint firstAttribute="trailing" secondItem="7Kv-TK-8LZ" secondAttribute="trailing" constant="8" id="P6o-Rh-Ynm"/>
+                            <constraint firstItem="7Kv-TK-8LZ" firstAttribute="top" secondItem="JUm-L8-yCM" secondAttribute="bottom" constant="8" id="ZUJ-aN-tfp"/>
+                            <constraint firstItem="JUm-L8-yCM" firstAttribute="top" secondItem="41N-nH-LHf" secondAttribute="top" constant="20" id="ZmQ-QT-kYl"/>
+                            <constraint firstItem="bQe-mE-x7W" firstAttribute="top" secondItem="7Kv-TK-8LZ" secondAttribute="bottom" constant="8" id="acL-pe-WbG"/>
+                            <constraint firstItem="JUm-L8-yCM" firstAttribute="leading" secondItem="41N-nH-LHf" secondAttribute="leading" id="hOo-hb-EJE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pdfWebKit" destination="7Kv-TK-8LZ" id="arF-mH-f57"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z8a-QP-puZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1600.8" y="-561.76911544227892"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bzY-si-J9r">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qqu-Fs-0WI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sdh-7o-1fB">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="gmH-fs-WgH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Mv-Np-YXv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116" y="-560.86956521739137"/>
+        </scene>
+    </scenes>
+</document>
