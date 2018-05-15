@@ -9,38 +9,36 @@
 import UIKit
 
 class BaseOperationQueueManager: NSObject {
-    
-    fileprivate var downloadSyncQueue: OperationQueue?
-	
-    //MARK:- Super Methods:
-    
-    override init() {
-        super.init()
-        
-        downloadSyncQueue = OperationQueue()
-        downloadSyncQueue?.name = "BaseDownloadOperationQueue"
-    }
+  
+  fileprivate var downloadSyncQueue: OperationQueue?
+  
+  //MARK:- Super Methods:
+  override init() {
+    super.init()
+    downloadSyncQueue = OperationQueue()
+    downloadSyncQueue?.name = "BaseDownloadOperationQueue"
+  }
 }
 
 //MARK:- Helper Methods:
 extension BaseOperationQueueManager {
-    
-    func addDownloadOperation(operation: Operation) {
-        downloadSyncQueue?.addOperation(operation)
-    }
-    
-    func cancelAllQueues() {
-        downloadSyncQueue?.cancelAllOperations()
-	}
-    
-    func getCurrentOperation() -> Operation? {
-        print("sync count is \(String(describing: OperationQueue.current?.operations))")
-        return OperationQueue.current?.operations.first
-    }
-    
-    func canceldownloadOperation() {
-        self.downloadSyncQueue?.cancelAllOperations()
-    }
-
+  
+  func addDownloadOperation(operation: Operation) {
+    downloadSyncQueue?.addOperation(operation)
+  }
+  
+  func cancelAllQueues() {
+    downloadSyncQueue?.cancelAllOperations()
+  }
+  
+  func getCurrentOperation() -> Operation? {
+    print("sync count is \(String(describing: OperationQueue.current?.operations))")
+    return OperationQueue.current?.operations.first
+  }
+  
+  func canceldownloadOperation() {
+    self.downloadSyncQueue?.cancelAllOperations()
+  }
+  
 }
 
